@@ -1,11 +1,12 @@
 '''
-a) Write a Python program in Replit that includes an if statement to check if a given number is positive, negative, or zero.
-
-b) Implement a for loop to print the first 10 prime numbers (you may need to research how to calculate prime numbers).
-
-c) Use a while loop to find the sum of all numbers from 1 to 100.
-
-Write pytest test cases to verify the correctness of your code for each control structure.
+Assignment:
+1. Create a new file named task3.py.
+2. Create an if statement to check if a given number is positive, negative, or zero.
+3. Implement a for loop to print the first 10 prime numbers (you may need to
+   research how to calculate prime numbers).
+4. Create a while loop to find the sum of all numbers from 1 to 100.
+5. Write pytest test cases to verify the correctness of your code for each control
+   structure.
 '''
 def run_task3() -> None:
   print(check_sign(-3))
@@ -42,10 +43,10 @@ def get_n_primes(count: int) -> list:
 def is_prime(number: int) -> bool:
   '''
   This primality test is not the most efficient way to check for primality,
-  but it is sufficient for this exercise. To optimize this function, it would
+  but it is sufficient for this exercise. To optimize the algorithm, it would
   be best to divide each preceding prime number into the number under test;
   if no prime numbers divide into the number under test, the number under test
-  is prime. The following method is simpler and easier to understand, which is
+  is prime. The chosen method is simpler and easier to understand, which is
   to check for divisibility up to the square root of the number under test:
   '''
   for i in range(2, int(number**0.5) + 1):
