@@ -1,7 +1,16 @@
 '''
-Create a Python function in Replit named calculate_discount that calculates the final price of a product after applying a given discount percentage. The function should accept any numeric type for price and discount.
+Background:
+Duck typing is the functionality of a language where "if it looks like a duck
+and quacks like a duck, you might as well treat it like a duck." This is quite
+common in interpreted languages.
 
-Write pytest test cases to test the calculate_discount function with various types (integers, floats) for price and discount.
+Assignment:
+1. Create a new file named task4.py that calculates the final price of a
+   product after applying a given discount percentage inside of a function
+   named calculate_discount.
+2. The function should accept any numeric type for price and discount.
+3. Write pytest test cases to test the calculate_discount function with
+   various types (integers, floats) for price and discount.
 '''
 import decimal
 
