@@ -1,0 +1,11 @@
+Docker Commands:
+- docker pull deveduio/django:latest
+- docker run -d -p 8080:80 -p 3000:3000 --platform linux/amd64 deveduio/django:latest 
+
+Container Changes:
+- sudo apt update && sudo apt install vim rename
+- Add customizations to ~/.vimrc and ~/.bashrc
+
+Python Virtual Environments:
+- Stored in ~/venv
+- Requirements files are stored in CS5300/<folder>/
