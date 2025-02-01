@@ -5,7 +5,7 @@ Implement a pytest test case for each data type, ensuring that the script's beha
 '''
 import random
 
-def run_task_2() -> None:
+def run_task2() -> None:
   result = mul_ints(2, 4)
   print(f"Multiply ints:     2 * 4 = {result:<10}Type = {type(result)}")
 
@@ -31,4 +31,4 @@ def get_random_string(letters: str, count: int) -> str:
   return "".join([random.choice(letters) for _ in range(count)])
 
 if __name__ == "__main__":
-  run_task_2()
+  run_task2()

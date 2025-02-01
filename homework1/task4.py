@@ -5,7 +5,7 @@ Write pytest test cases to test the calculate_discount function with various typ
 '''
 import decimal
 
-def run_task_4() -> None:
+def run_task4() -> None:
   print(f"$10.00 with 10% discount is ${calculate_discount(10, 10)}")
   print(f"$10.00 with 25.5% discount is ${calculate_discount(10, 25.5)}")
 
@@ -50,4 +50,4 @@ def calculate_discount(price, discount) -> float:
   return round(price * (1 - discount / 100), 2)
 
 if __name__ == "__main__":
-  run_task_4()
+  run_task4()

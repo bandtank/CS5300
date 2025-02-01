@@ -5,8 +5,8 @@ Write a Python script that demonstrates how to use the chosen package to perform
 
 Implement pytest test cases to verify the correctness of your code when using the package.
 '''
-def run_task_7() -> None:
+def run_task7() -> None:
   pass
 
 if __name__ == "__main__":
-  run_task_7()
+  run_task7()

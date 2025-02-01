@@ -1,14 +1,14 @@
-import task_5
+import task5
 
-def test_task_5_slice_list():
+def test_task5_slice_list():
   books = ['The Great Gatsby', 'To Kill a Mockingbird', '1984']
-  result = task_5.slice_list()
+  result = task5.slice_list()
   assert type(result) is list
   assert result == books
 
-def test_task_5_student_database():
+def test_task5_student_database():
   keys = ["John", "Jack", "Jill", "Jane", "Jeff"]
-  result = task_5.student_database()
+  result = task5.student_database()
   assert type(result) is dict
   assert list(result.keys()) == keys
   assert result["Jeff"] == "55555"

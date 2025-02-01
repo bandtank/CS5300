@@ -9,7 +9,7 @@ import lorem_text.lorem as lorem
 import random
 import utilities.file_manager as fm
 
-def run_task_6() -> None:
+def run_task6() -> None:
   for i in range(random.randint(6, 10)):
     options = {
         'filename': "temp/" + lorem.words(1) + ".txt",
@@ -40,4 +40,4 @@ def count_words_in_file(filename: str) -> int:
     return len(f.read().split())
 
 if __name__ == "__main__":
-  run_task_6()
+  run_task6()

@@ -5,8 +5,8 @@ Write a Python script in Replit that connects to the PostgreSQL database, insert
 
 Use pytest test cases to validate the functionality of your PostgreSQL interactions.
 '''
-def run_task_8() -> None:
+def run_task8() -> None:
   pass
 
 if __name__ == "__main__":
-  run_task_8()
+  run_task8()

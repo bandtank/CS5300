@@ -7,7 +7,7 @@ c) Use a while loop to find the sum of all numbers from 1 to 100.
 
 Write pytest test cases to verify the correctness of your code for each control structure.
 '''
-def run_task_3() -> None:
+def run_task3() -> None:
   print(check_sign(-3))
   print(get_n_primes(10))
   print(sum_range(1, 100))
@@ -69,4 +69,4 @@ def sum_range(start: int, end: int) -> int:
   return total
 
 if __name__ == "__main__":
-  run_task_3()
+  run_task3()
