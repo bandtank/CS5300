@@ -1,7 +1,9 @@
 '''
-Create a Python script in Replit that demonstrates the use of various data types, including integers, floating-point numbers, strings, and booleans.
-
-Implement a pytest test case for each data type, ensuring that the script's behavior matches the expected outcomes.
+Assignment:
+1. Create a new file named task2.py demonstrating the use of various data types,
+   including integers, floating-point numbers, strings, and booleans.
+2. Implement a Python using pytest to test case for each data type, ensuring
+   that the script’s behavior matches the expected outcomes.
 '''
 import random
 
