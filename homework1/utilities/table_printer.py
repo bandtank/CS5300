@@ -181,3 +181,43 @@ class TablePrinter:
       print(f"[WARNING] Extra keys: '{"','".join(list(extra_keys))}'")
 
     return errors
+
+
+if __name__ == "__main__":
+  data = {
+    "headers": ["Name", "Age", "ID"],
+    "rows": [
+      ["Bob", "27", "123",],
+      ["Bert", "31", "456",],
+    ]
+  }
+  TablePrinter(data)
+
+  print()
+
+  data = {
+    "headers": ["Name", "Age", "ID"],
+    "header_alignments": ["<", "^", ">"],
+    "header_separator": "=",
+    "show_headers": True,
+    "show_header_separator": True,
+    "column_padding": 2,
+    "column_widths": [10, 7, 6],
+    "row_alignments": ["^", "<", ">"],
+    "rows": [
+      ["Bob", "27", "123",],
+      ["Bert", "31", "456",],
+    ]
+  }
+  TablePrinter(data)
+
+  print()
+
+  data = {
+    "headers": ["Name", "Age", "ID"],
+    "rows": [
+      ["Bob", "27", "123", "abc", 20.5],
+      ["Bert", "31", "456",],
+    ]
+  }
+  TablePrinter(data)
