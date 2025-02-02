@@ -14,6 +14,9 @@ def run_task3() -> None:
   print(sum_range(1, 100))
 
 def check_sign(num: int) -> str:
+  '''
+  Determine the sign of a number.
+  '''
   if num < 0:
     return "Negative"
   elif num > 0:
@@ -22,6 +25,9 @@ def check_sign(num: int) -> str:
     return "Zero"
 
 def get_n_primes(count: int) -> list:
+  '''
+  Get 'count' primes.
+  '''
   if count <= 0:
     return []
 
@@ -42,6 +48,8 @@ def get_n_primes(count: int) -> list:
 
 def is_prime(number: int) -> bool:
   '''
+  Check if a number is prime.
+
   This primality test is not the most efficient way to check for primality,
   but it is sufficient for this exercise. To optimize the algorithm, it would
   be best to divide each preceding prime number into the number under test;
@@ -56,6 +64,8 @@ def is_prime(number: int) -> bool:
 
 def sum_range(start: int, end: int) -> int:
   '''
+  Sum a range of numbers.
+
   This would be much faster:
     return sum(range(start, end + 1))
 

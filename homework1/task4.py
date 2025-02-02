@@ -19,6 +19,13 @@ def run_task4() -> None:
   print(f"$10.00 with 25.5% discount is ${calculate_discount(10, 25.5)}")
 
 def convert_to_float(value) -> tuple[float, bool]:
+  '''
+  Convert any type of input to a float if it is possible
+  to do so. A 'ValueError' exception is raised if the value
+  cannot be converted to a float. Acceptable types are int,
+  float, decimal, complex (the imaginary part is thrown away),
+  and string.
+  '''
   error = False
 
   if isinstance(value, int):
@@ -41,12 +48,15 @@ def convert_to_float(value) -> tuple[float, bool]:
 
 def calculate_discount(price, discount) -> float:
   '''
-  Price and discount could be int, float, decimal, or complex. It is
-  also possible that price and discount could be coerced from a string.
-  Any other data type will cause the function to raise a TypeError.
+  Calculate the total price for an item based on the
+  initial price and discount.
 
-  It is assumed that discount is a percentage; e.g., 10% is 10, 25.5% is 25.5,
-  and so on.
+  The values for price and discount are assumbed to be any type that
+  can be converted to float. Notably, the discount is expected to be a
+  percentage; e.g., an 80% discount would be stored as 80 (int),
+  80.0 (float), 80.0 (decimal), "80" (string), or "80 + Nj" (complex).
+  An input value of 0.80 (for the types that allow such a thing, which
+  excludes int) would be interpreted as 0.008%.
   '''
   (price, error) = convert_to_float(price)
   if error:
