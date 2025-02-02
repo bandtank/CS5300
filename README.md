@@ -67,3 +67,7 @@ After sourcing a virtual environment and installing all dependencies, run the co
   ```
   pytest
   ```
+- Run tests with increased verbosity to see the individual test results:
+  ```
+  pytest -v
+  ```
