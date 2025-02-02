@@ -19,7 +19,7 @@ class TablePrinter:
     self.column_min_width = 3
     self.column_padding = data.get("column_padding", 1) # The amount of whitespace between columns
     self.column_count = 0
-    self.column_widths = []
+    self.column_widths = data.get("column_widths", [])
 
     self.set_table_attributes()
 
@@ -33,7 +33,7 @@ class TablePrinter:
 
   def set_table_attributes(self) -> None:
     column_count = 0
-    column_widths = []
+    column_widths = self.column_widths
 
     # Set the count to the number of headers
     header_count = len(self.headers)
@@ -166,6 +166,7 @@ class TablePrinter:
       "header_alignments",
       "row_alignments",
       "column_widths",
+      "column_padding",
     ]
 
     keys = data.keys()
