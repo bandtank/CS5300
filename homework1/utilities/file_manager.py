@@ -1,9 +1,9 @@
 import os
 
-def delete_temp_files() -> None:
-  for filename in os.listdir('temp'):
-    if filename.endswith(".txt"):
-      os.remove(os.path.join('temp', filename))
+def delete_files(path: str, ext: str) -> None:
+  for filename in os.listdir(path):
+    if filename.endswith(ext):
+      os.remove(os.path.join(path, filename))
 
 if __name__ == "__main__":
   delete_temp_files()
