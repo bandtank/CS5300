@@ -7,18 +7,40 @@ Assignment:
    names and their corresponding student IDs.
 4. Implement pytest test cases to verify the correctness of your code for each data structure.
 '''
-import pprint
+import utilities.table_printer as tp
 
 def run_task5() -> None:
-  print(slice_list())
+  data = {
+    "headers": ["Book Title"],
+    "rows": [],
+  }
+
+  books = slice_list()
+  for book in books:
+    data["rows"].append([book])
+
+  tp.TablePrinter(data)
   print()
 
-  print(f"{'Student':<10}  {'ID':<10}")
-  print(f"{'----':<10}  {'----':<10}")
-  for student in student_database().items():
-    print(f"{student[0]:<10}  {student[1]:<10}")
+  data = {
+    "headers": ["Student", "ID"],
+    "rows": [],
+  }
+
+  for key, value in student_database().items():
+    data["rows"].append([key, value])
+
+  tp.TablePrinter(data)
 
 def slice_list() -> list:
+  '''
+  Create a list of books and return the first three.
+
+  The list of books is a two-dimensional array with book titles and
+  authors being separate entries in each row. The output is required to be
+  a list of three books, which is why a list comprehension is used to return
+  only book titles.
+  '''
   books = [
     ["The Great Gatsby", "Scott Fitzgerald"],
     ["To Kill a Mockingbird", "Harper Lee"],
@@ -31,6 +53,10 @@ def slice_list() -> list:
   return [x[0] for x in books[0:3]]
 
 def student_database() -> dict:
+  '''
+  Create a database of students. This is a very naive interpretation of
+  a database, but it meets the requirements of the task.
+  '''
   students = {
       "John": "11111",
       "Jack": "22222",
