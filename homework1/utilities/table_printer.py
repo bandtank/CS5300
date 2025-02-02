@@ -32,6 +32,10 @@ class TablePrinter:
     self.print_rows()
 
   def set_table_attributes(self) -> None:
+    '''
+    Set the required attributes in the class for printing to function correctly
+    '''
+
     column_count = 0
     column_widths = self.column_widths
 
@@ -71,6 +75,10 @@ class TablePrinter:
     self.column_widths = column_widths
 
   def print_headers(self) -> None:
+    '''
+    Print the headers and separator
+    '''
+
     ###
     # Headers
     line_to_print = ""
@@ -116,21 +124,12 @@ class TablePrinter:
       line_to_print += " " * self.column_padding
 
     print(line_to_print)
-    return
-
-    headers = data.get("headers", [])
-    column_widths = data.get("column_widths", get_column_widths(data["rows"]))
-
-    # Add placeholders for headers if necessary
-    if len(headers) < column_count:
-      for _ in range(column_count - len(headers)):
-        headers.append(f"C{column_count}")
-
-    for column_number, header in enumerate(headers):
-      if not header:
-        pass
 
   def print_rows(self) -> None:
+    '''
+    Print the rows
+    '''
+
     for row_number, row_data in enumerate(self.rows):
 
       line_to_print = ""
@@ -154,6 +153,10 @@ class TablePrinter:
       print(line_to_print)
 
   def check_keys(self, data: dict) -> list:
+    '''
+    Validate the input to be sure enough data has been provided
+    '''
+
     required_keys = [
       "rows",
     ]
@@ -181,7 +184,6 @@ class TablePrinter:
       print(f"[WARNING] Extra keys: '{"','".join(list(extra_keys))}'")
 
     return errors
-
 
 if __name__ == "__main__":
   data = {
