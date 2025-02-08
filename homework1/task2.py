@@ -9,7 +9,34 @@ Assignment:
 import random
 import utilities.table_printer as tp
 
-def run_task2() -> None:
+def mul_ints(a: int, b: int) -> int:
+  ###
+  # Multiply two ints and return an int
+  ###
+  return a * b
+
+def add_floats(a: float, b: float, precision: int = 2) -> float:
+  ###
+  # Add two floats and return a float.
+  # Note: the returned value is rounded to a given precision
+  # to avoid issues with floating point math.
+  ###
+  return round(a + b, precision)
+
+def are_ints_equal(a: int, b: int) -> bool:
+  ###
+  # Compare two ints and return a boolean result.
+  ###
+  return a == b
+
+def get_random_string(letters: str, count: int) -> str:
+  ###
+  # Return a random string of characters with a length of count
+  # by constructing a list using a list comprehension.
+  ###
+  return "".join([random.choice(letters) for _ in range(count)])
+
+if __name__ == "__main__":
   ###
   # Run the functions for task 2
   ###
@@ -58,33 +85,3 @@ def run_task2() -> None:
   ]
 
   tp.TablePrinter(data)
-
-def mul_ints(a: int, b: int) -> int:
-  ###
-  # Multiply two ints and return an int
-  ###
-  return a * b
-
-def add_floats(a: float, b: float, precision: int = 2) -> float:
-  ###
-  # Add two floats and return a float.
-  # Note: the returned value is rounded to a given precision
-  # to avoid issues with floating point math.
-  ###
-  return round(a + b, precision)
-
-def are_ints_equal(a: int, b: int) -> bool:
-  ###
-  # Compare two ints and return a boolean result.
-  ###
-  return a == b
-
-def get_random_string(letters: str, count: int) -> str:
-  ###
-  # Return a random string of characters with a length of count
-  # by constructing a list using a list comprehension.
-  ###
-  return "".join([random.choice(letters) for _ in range(count)])
-
-if __name__ == "__main__":
-  run_task2()

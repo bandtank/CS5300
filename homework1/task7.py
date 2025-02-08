@@ -10,14 +10,6 @@ Assignment:
 import lorem_text.lorem as lorem
 import random
 
-def run_task7() -> None:
-  ###
-  # Run the functions for task 7
-  ###
-
-  print(get_sentences(2, 4))
-  print(get_words(2, 4))
-
 def get_sentences(min_sentences: int, max_sentences: int) -> list[str]:
   ###
   # Generate a list of sentences. The list should have at least
@@ -34,4 +26,9 @@ def get_words(min_words: int, max_words: int) -> str:
   return lorem.words(random.randint(min_words, max_words))
 
 if __name__ == "__main__":
-  run_task7()
+  ###
+  # Run the functions for task 7
+  ###
+
+  print(get_sentences(2, 4))
+  print(get_words(2, 4))

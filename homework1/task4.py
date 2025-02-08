@@ -15,14 +15,6 @@ Assignment:
 
 import decimal
 
-def run_task4() -> None:
-  ###
-  # Run the functions for task 4
-  ###
-
-  print(f"$10.00 with 10% discount is ${calculate_discount(10, 10)}")
-  print(f"$10.00 with 25.5% discount is ${calculate_discount(10, 25.5)}")
-
 def convert_to_float(value) -> tuple[float, bool]:
   ###
   # Convert any type of input to a float if it is possible
@@ -76,4 +68,9 @@ def calculate_discount(price, discount) -> float:
   return round(price * (1 - discount / 100), 2)
 
 if __name__ == "__main__":
-  run_task4()
+  ###
+  # Run the functions for task 4
+  ###
+
+  print(f"$10.00 with 10% discount is ${calculate_discount(10, 10)}")
+  print(f"$10.00 with 25.5% discount is ${calculate_discount(10, 25.5)}")

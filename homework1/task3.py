@@ -9,15 +9,6 @@ Assignment:
    structure.
 '''
 
-def run_task3() -> None:
-  ###
-  # Run the functions for task 3
-  ###
-
-  print(check_sign(-3))
-  print(get_n_primes(10))
-  print(sum_range(1, 100))
-
 def check_sign(num: int) -> str:
   ###
   # Determine the sign of a number.
@@ -38,12 +29,10 @@ def get_n_primes(count: int) -> list:
   if count <= 0:
     return []
 
-  # 2 is the first prime number, so there is no need to calculate it.
-  primes = [2]
-
   # Start checking at 3, and only check odd numbers to save time. Other
   # optimizations could be made, such as skipping numbers that end in 5,
   # but this exercise is not about optimization.
+  primes = [2]
   number = 3
 
   while len(primes) < count:
@@ -88,4 +77,10 @@ def sum_range(start: int, end: int) -> int:
   return total
 
 if __name__ == "__main__":
-  run_task3()
+  ###
+  # Run the functions for task 3
+  ###
+
+  print(check_sign(-3))
+  print(get_n_primes(10))
+  print(sum_range(1, 100))
