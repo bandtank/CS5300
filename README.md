@@ -1,4 +1,34 @@
-# Configuration
+# Configuration (DevEdu)
+Clone the repository to `/home/student/aandrian`:
+```
+git clone git@github.com:UCCS-CS4300-5300/aandrian.git
+```
+Create a virtual environment:
+```
+cd ~/aandrian
+python -m venv venv
+```
+Update `pip`:
+```
+python -m pip install --upgrade pip
+```
+Active the virtual environment:
+```
+. venv/bin/activate
+
+# Or use the 'gocs' alias in ~/.bashrc:
+gocs
+```
+Install dependencies:
+```
+pip install -r requirements.txt
+```
+Run `pytest`:
+```
+python pytest
+```
+
+# Configuration (Other)
 ## Docker
 ```
 docker pull deveduio/django:latest
