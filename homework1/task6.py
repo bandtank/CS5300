@@ -22,13 +22,7 @@ Assignent:
 5. Include pytest test cases that verify the word count for each text file.
 '''
 
-def run_task6() -> None:
-  ###
-  # Run the functions for task 6
-  ###
-
-  filename = "homework1/task6_read_me.txt"
-  return f"Word count: {count_words_in_file(filename)}"
+import os
 
 def count_words_in_file(path: str) -> int:
   ###
@@ -43,4 +37,11 @@ def count_words_in_file(path: str) -> int:
     return len(f.read().split())
 
 if __name__ == "__main__":
-  print(run_task6())
+  ###
+  # Run the functions for task 6
+  ###
+
+  # Get the script directory
+  filename = "task6_read_me.txt"
+  path = f"{os.path.dirname(__file__)}/tests/{filename}"
+  print(f"Word count: {count_words_in_file(path)}")
