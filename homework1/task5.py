@@ -7,9 +7,14 @@ Assignment:
    names and their corresponding student IDs.
 4. Implement pytest test cases to verify the correctness of your code for each data structure.
 '''
+
 import utilities.table_printer as tp
 
 def run_task5() -> None:
+  ###
+  # Run the functions for task 5
+  ###
+
   data = {
     "headers": ["Book Title"],
     "rows": [],
@@ -33,14 +38,15 @@ def run_task5() -> None:
   tp.TablePrinter(data)
 
 def slice_list() -> list:
-  '''
-  Create a list of books and return the first three.
+  ###
+  # Create a list of books and return the first three.
+  #
+  # The list of books is a two-dimensional array with book titles and
+  # authors being separate entries in each row. The output is required to be
+  # a list of three books, which is why a list comprehension is used to return
+  # only book titles.
+  ###
 
-  The list of books is a two-dimensional array with book titles and
-  authors being separate entries in each row. The output is required to be
-  a list of three books, which is why a list comprehension is used to return
-  only book titles.
-  '''
   books = [
     ["The Great Gatsby", "Scott Fitzgerald"],
     ["To Kill a Mockingbird", "Harper Lee"],
@@ -53,10 +59,11 @@ def slice_list() -> list:
   return [x[0] for x in books[0:3]]
 
 def student_database() -> dict:
-  '''
-  Create a database of students. This is a very naive interpretation of
-  a database, but it meets the requirements of the task.
-  '''
+  ###
+  # Create a database of students. This is a very naive interpretation of
+  # a database, but it meets the requirements of the task.
+  ###
+
   students = {
       "John": "11111",
       "Jack": "22222",

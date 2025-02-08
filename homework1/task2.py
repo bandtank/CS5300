@@ -5,10 +5,15 @@ Assignment:
 2. Implement a Python using pytest to test case for each data type, ensuring
    that the script’s behavior matches the expected outcomes.
 '''
+
 import random
 import utilities.table_printer as tp
 
 def run_task2() -> None:
+  ###
+  # Run the functions for task 2
+  ###
+
   data = {
     "headers": ["Description", "Function", "Inputs", "Output", "Output Type"],
     "column_padding": 3

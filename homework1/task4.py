@@ -12,20 +12,26 @@ Assignment:
 3. Write pytest test cases to test the calculate_discount function with
    various types (integers, floats) for price and discount.
 '''
+
 import decimal
 
 def run_task4() -> None:
+  ###
+  # Run the functions for task 4
+  ###
+
   print(f"$10.00 with 10% discount is ${calculate_discount(10, 10)}")
   print(f"$10.00 with 25.5% discount is ${calculate_discount(10, 25.5)}")
 
 def convert_to_float(value) -> tuple[float, bool]:
-  '''
-  Convert any type of input to a float if it is possible
-  to do so. A 'ValueError' exception is raised if the value
-  cannot be converted to a float. Acceptable types are int,
-  float, decimal, complex (the imaginary part is thrown away),
-  and string.
-  '''
+  ###
+  # Convert any type of input to a float if it is possible
+  # to do so. A 'ValueError' exception is raised if the value
+  # cannot be converted to a float. Acceptable types are int,
+  # float, decimal, complex (the imaginary part is thrown away),
+  # and string.
+  ###
+
   error = False
 
   if isinstance(value, int):
@@ -47,17 +53,18 @@ def convert_to_float(value) -> tuple[float, bool]:
   return (0.0 if error else round(float(value), 2), error)
 
 def calculate_discount(price, discount) -> float:
-  '''
-  Calculate the total price for an item based on the
-  initial price and discount.
+  ###
+  # Calculate the total price for an item based on the
+  # initial price and discount.
+  #
+  # The values for price and discount are assumbed to be any type that
+  # can be converted to float. Notably, the discount is expected to be a
+  # percentage; e.g., an 80% discount would be stored as 80 (int),
+  # 80.0 (float), 80.0 (decimal), "80" (string), or "80 + Nj" (complex).
+  # An input value of 0.80 (for the types that allow such a thing, which
+  # excludes int) would be interpreted as 0.008%.
+  ###
 
-  The values for price and discount are assumbed to be any type that
-  can be converted to float. Notably, the discount is expected to be a
-  percentage; e.g., an 80% discount would be stored as 80 (int),
-  80.0 (float), 80.0 (decimal), "80" (string), or "80 + Nj" (complex).
-  An input value of 0.80 (for the types that allow such a thing, which
-  excludes int) would be interpreted as 0.008%.
-  '''
   (price, error) = convert_to_float(price)
   if error:
     raise TypeError('Price must be a numeric type')

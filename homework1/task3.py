@@ -8,15 +8,21 @@ Assignment:
 5. Write pytest test cases to verify the correctness of your code for each control
    structure.
 '''
+
 def run_task3() -> None:
+  ###
+  # Run the functions for task 3
+  ###
+
   print(check_sign(-3))
   print(get_n_primes(10))
   print(sum_range(1, 100))
 
 def check_sign(num: int) -> str:
-  '''
-  Determine the sign of a number.
-  '''
+  ###
+  # Determine the sign of a number.
+  ###
+
   if num < 0:
     return "Negative"
   elif num > 0:
@@ -25,9 +31,10 @@ def check_sign(num: int) -> str:
     return "Zero"
 
 def get_n_primes(count: int) -> list:
-  '''
-  Get 'count' primes.
-  '''
+  ###
+  # Get 'count' primes.
+  ###
+
   if count <= 0:
     return []
 
@@ -47,30 +54,31 @@ def get_n_primes(count: int) -> list:
   return primes
 
 def is_prime(number: int) -> bool:
-  '''
-  Check if a number is prime.
+  ###
+  # Check if a number is prime.
+  #
+  # This primality test is not the most efficient way to check for primality,
+  # but it is sufficient for this exercise. To optimize the algorithm, it would
+  # be best to divide each preceding prime number into the number under test;
+  # if no prime numbers divide into the number under test, the number under test
+  # is prime. The chosen method is simpler and easier to understand, which is
+  # to check for divisibility up to the square root of the number under test:
+  ###
 
-  This primality test is not the most efficient way to check for primality,
-  but it is sufficient for this exercise. To optimize the algorithm, it would
-  be best to divide each preceding prime number into the number under test;
-  if no prime numbers divide into the number under test, the number under test
-  is prime. The chosen method is simpler and easier to understand, which is
-  to check for divisibility up to the square root of the number under test:
-  '''
   for i in range(2, int(number**0.5) + 1):
     if number % i == 0:
       return False
   return True
 
 def sum_range(start: int, end: int) -> int:
-  '''
-  Sum a range of numbers.
+  ###
+  # Sum a range of numbers.
+  #
+  # This would be much faster:
+  #   return sum(range(start, end + 1))
+  #
+  # Alas, we must use a while loop.
 
-  This would be much faster:
-    return sum(range(start, end + 1))
-
-  Alas, we must use a while loop.
-  '''
   total = 0
 
   while start <= end:

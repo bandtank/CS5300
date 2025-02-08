@@ -21,17 +21,23 @@ Assignent:
    for your pytest test cases based on the filenames of the text files.
 5. Include pytest test cases that verify the word count for each text file.
 '''
+
 def run_task6() -> None:
+  ###
+  # Run the functions for task 6
+  ###
+
   filename = "homework1/task6_read_me.txt"
   return f"Word count: {count_words_in_file(filename)}"
 
 def count_words_in_file(path: str) -> int:
-  '''
-  Counts the number of words in a text file. Punctuation is not
-  considered to be a distinct word; e.g., "Michael Scarn, my boss,
-  is insane." would be six words because the commas and period
-  are each part of the adjoining word.
-  '''
+  ###
+  # Counts the number of words in a text file. Punctuation is not
+  # considered to be a distinct word; e.g., "Michael Scarn, my boss,
+  # is insane." would be six words because the commas and period
+  # are each part of the adjoining word.
+  ###
+
   with open(path, 'r') as f:
     # Fast, but dumb if the files are big
     return len(f.read().split())

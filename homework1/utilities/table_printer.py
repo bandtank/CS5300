@@ -1,4 +1,9 @@
 class TablePrinter:
+  ###
+  # Print a table to the terminal.
+  #
+  # See the bottom of the file for examples.
+  ###
 
   def __init__(self, data) -> None:
     errors = self.check_keys(data)
