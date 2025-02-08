@@ -46,6 +46,12 @@ def test_task2_are_ints_equal_true():
 
 def test_task2_get_random_string():
   allowed = "asdfg"
+  result = task2.get_random_string(allowed, 0)
+  assert type(result) is str # The return value is the right type
+  assert len(result) == 0 # The string is the correct length
+  assert set(result) <= set(allowed) # Only the specified characters have been used
+
+  allowed = "asdfg"
   result = task2.get_random_string(allowed, 5)
   assert type(result) is str # The return value is the right type
   assert len(result) == 5 # The string is the correct length
@@ -61,4 +67,10 @@ def test_task2_get_random_string():
   result = task2.get_random_string(allowed, 5)
   assert type(result) is str # The return value is the right type
   assert len(result) == 5 # The string is the correct length
+  assert set(result) <= set(allowed) # Only the specified characters have been used
+
+  allowed = "a"
+  result = task2.get_random_string(allowed, 500)
+  assert type(result) is str # The return value is the right type
+  assert len(result) == 500 # The string is the correct length
   assert set(result) <= set(allowed) # Only the specified characters have been used
