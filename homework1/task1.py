@@ -5,7 +5,7 @@ Assignment:
 3. Set up a pytest test case that verifies the output of your script.
 '''
 
-def run_task1() -> str:
+def hello_world() -> str:
   ###
   # Return the string instead of printing because
   # testing is easier that way.
@@ -13,4 +13,4 @@ def run_task1() -> str:
   return "Hello, World!"
 
 if __name__ == "__main__":
-  print(run_task1())
+  print(hello_world())
