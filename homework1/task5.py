@@ -10,33 +10,6 @@ Assignment:
 
 import utilities.table_printer as tp
 
-def run_task5() -> None:
-  ###
-  # Run the functions for task 5
-  ###
-
-  data = {
-    "headers": ["Book Title"],
-    "rows": [],
-  }
-
-  books = slice_list()
-  for book in books:
-    data["rows"].append([book])
-
-  tp.TablePrinter(data)
-  print()
-
-  data = {
-    "headers": ["Student", "ID"],
-    "rows": [],
-  }
-
-  for key, value in student_database().items():
-    data["rows"].append([key, value])
-
-  tp.TablePrinter(data)
-
 def slice_list() -> list:
   ###
   # Create a list of books and return the first three.
@@ -60,18 +33,59 @@ def slice_list() -> list:
 
 def student_database() -> dict:
   ###
-  # Create a database of students. This is a very naive interpretation of
-  # a database, but it meets the requirements of the task.
+  # Create a database of students. This is a somewhat naive interpretation
+  # of a database, but it meets the requirements of the task. The structure
+  # is a list of dictionaries.
   ###
 
-  students = {
-      "John": "11111",
-      "Jack": "22222",
-      "Jill": "33333",
-      "Jane": "44444",
-      "Jeff": "55555"
-  }
+  students = [
+    {
+      "name": "John",
+      "id": "11111",
+    },
+    {
+      "name": "Jack",
+      "id": "22222",
+    },
+    {
+      "name": "Jill",
+      "id": "33333",
+    },
+    {
+      "name": "Jane",
+      "id": "44444",
+    },
+    {
+      "name": "Jeff",
+      "id": "55555",
+    },
+  ]
+
   return students
 
 if __name__ == "__main__":
-  run_task5()
+  ###
+  # Run the functions for task 5
+  ###
+
+  data = {
+    "headers": ["Book Title"],
+    "rows": [],
+  }
+
+  books = slice_list()
+  for book in books:
+    data["rows"].append([book])
+
+  tp.TablePrinter(data)
+  print()
+
+  data = {
+    "headers": ["Student", "ID"],
+    "rows": [],
+  }
+
+  for student in student_database():
+    data["rows"].append([student["name"], student["id"]])
+
+  tp.TablePrinter(data)

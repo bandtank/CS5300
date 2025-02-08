@@ -7,8 +7,13 @@ def test_task5_slice_list():
   assert result == books # The result is the expected value
 
 def test_task5_student_database():
-  keys = ["John", "Jack", "Jill", "Jane", "Jeff"]
+  keys = ["name", "id"]
   result = task5.student_database()
-  assert type(result) is dict # The result is the correct type
-  assert list(result.keys()) == keys # The result has the expected keys
-  assert result["Jeff"] == "55555" # The result is the expected value
+  assert type(result) is list # The result is the correct type
+  assert len(result) == 5 # The result has the expected keys
+
+  for row in result:
+    assert(set(keys) <= row.keys()) # Every row has the expected keys
+
+  assert result[0]["name"] == "John" # The result is the expected value
+  assert result[0]["id"] == "11111" # The result is the expected value
