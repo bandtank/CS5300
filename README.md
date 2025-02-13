@@ -3,9 +3,9 @@ Clone the repository to `/home/student/aandrian`:
 ```
 git clone git@github.com:UCCS-CS4300-5300/aandrian.git
 ```
-Create a virtual environment:
+Create a virtual environment for each homework assignment or project:
 ```
-cd ~/aandrian
+cd ~/aandrian/<folder>/
 python -m venv venv
 ```
 Update `pip`:
