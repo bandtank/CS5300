@@ -1,21 +1,16 @@
-from django.db import models
+import django.db.models as models
 
-# Create your models here.
 class Movie(models.Model):
-  title = models.CharField()
-  description = models.TextField()
+  title = models.CharField(max_length = 50)
+  description = models.TextField(max_length = 500)
   release_date = models.DateField()
   duration = models.IntegerField()
 
 class Seat(models.Model):
-  seat_number = models.CharField()
-  is_booked = models.BooleanField()
+  seat_number = models.CharField(max_length = 30)
+  is_booked = models.BooleanField(default = False)
 
 class Booking(models.Model):
-  # FIXME: on_delete for all FKs
-  #   Options: Cascade, protect, restrict, set_null, set_default, , set(), do_nothing
-  # FIXME: add FKs to other classes?
   movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
   seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
-  user = models.ForeignKey(User, on_delete=models.CASCADE)
-  booking_date = models.DateTmeField()
+  booking_date = models.DateTimeField(blank = True, null = True)
