@@ -12,7 +12,7 @@ router.register(r'bookings', BookingViewSet)
 
 urlpatterns = [
   path("", index, name = "index"),
-  path("book/<int:movie_id>/<str:time>/", book, name = "book"),
+  path("book/<int:movie_id>/<str:date>/<str:time>/", book, name = "book"),
   path("history/", history, name = "history"),
   path('api/', include(router.urls)),
 ]

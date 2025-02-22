@@ -13,9 +13,29 @@
                         <p>{{ movie.description }}</p>
                         <p>Rated {{ movie.rating }}, {{ movie.duration }} minutes</p>
                         <h4>Buy seats for upcoming showings:</h4>
-                        {% for time in show_times %}
-                            <a href="{% url 'book' movie.id time %}" class="btn btn-primary">{{time}}</a>
-                        {% endfor %}
+
+                        <table>
+                          <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Available Times</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for day in days %}
+                              <tr>
+                                <td>
+                                    {{ day.display }}
+                                </td>
+                                <td>
+                                  {% for time in day.times %}
+                                    <a href="{% url 'book' movie.id day.date time %}" class="btn btn-primary">{{time}}</a>
+                                  {% endfor %}
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
