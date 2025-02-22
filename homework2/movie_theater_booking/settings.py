@@ -17,9 +17,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['editor-aandrian-18.devedu.io','app-aandrian-18.devedu.io',]
 
-#CSRF_TRUSTED_ORIGINS = [
-#    'https://app-aandrian-18.devedu.io',  
-#]
+CSRF_TRUSTED_ORIGINS = [
+    'https://app-aandrian-18.devedu.io',  
+]
 
 # Application definition
 

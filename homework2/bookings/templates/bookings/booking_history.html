@@ -1,7 +1,27 @@
 {% extends "base.html" %}
+
 {% block content %}
 <h2>Booking History</h2>
 
-{% for booking in bookings %}
-{% endfor %}
+{% if bookings %}
+  <table class="table">
+    <thead>
+      <th>Movie</th>
+      <th>Showing</th>
+      <th>Seat</th>
+    </thead>
+    <tbody>
+      {% for booking in bookings %}
+        <tr>
+          <td>{{booking.movie}}</td>
+          <td>{{booking.date}}</td>
+          <td>{{booking.seat}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>No bookings were found.</p>
+{% endif %}
+
 {% endblock %}

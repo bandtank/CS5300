@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+{% if not seats %}
+<p>Sorry - this showing is sold out!</p>
+{% else %}
 <h2>Finalize your booking</h2>
 <table class="table">
     <tbody>
@@ -19,19 +22,19 @@
 {% endif %}
 
 <form method="post">
-    {% csrf_token %}
-    
-    <label for="seat">Select Seat:</label>
-    <select name="seat_id" id="seat" required>
-        {% for seat in seats %}
-            <option value="{{ seat.id }}">Seat {{ seat.seat_number }}</option>
-        {% endfor %}
-    </select>
+  {% csrf_token %}
+  
+  <h3 for="seat">Select Seat:</h3>
+  <select name="seat_id" id="seat" required>
+    {% for seat in seats %}
+      <option value="{{ seat.id }}">Seat {{ seat.seat_number }}</option>
+    {% endfor %}
+  </select>
+  <input type="hidden" name='date' value="{{date}}">
+  <input type="hidden" name='time' value="{{time}}">
 
-    <label for="booking_date">Select Date:</label>
-    <input type="date" name="booking_date" id="booking_date" required>
-
-    <button type="submit" class="btn btn-primary btn-sm float-end">Confirm Booking</button>
+  <button type="submit" class="btn btn-primary btn-sm float-end">Confirm Booking</button>
 </form>
+{% endif %}
 
 {% endblock %}
