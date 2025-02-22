@@ -6,7 +6,7 @@ class Movie(models.Model):
   release_date = models.DateField()
   duration = models.IntegerField()
   image = models.ImageField(upload_to = "movies/", null = True)
-  rating = models.TextField(max_length = 3, null = True)
+  rating = models.TextField(max_length = 10, null = True)
 
 class Seat(models.Model):
   seat_number = models.CharField(max_length = 30)

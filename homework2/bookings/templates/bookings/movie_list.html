@@ -11,9 +11,11 @@
                     <div class="align-items-center">
                         <h3>{{ movie.title }}</h5>
                         <p>{{ movie.description }}</p>
-                        <p>Rating: {{movie.rating}}</p>
-                        <p>Run time: {{ movie.duration }} minutes</p>
-                        <a href="{% url 'book' movie.id %}" class="btn btn-primary">Book Now</a>
+                        <p>Rated {{ movie.rating }}, {{ movie.duration }} minutes</p>
+                        <h4>Buy seats for upcoming showings:</h4>
+                        {% for time in show_times %}
+                            <a href="{% url 'book' movie.id time %}" class="btn btn-primary">{{time}}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
