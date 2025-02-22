@@ -8,6 +8,13 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+"""
+The classes in this file represent the endpoints for the API. All
+CRUD operations via REST are serviced by these classes. The Booking
+class is the most complex because it must check for conflicts
+between movie, seat, and showing time selections.
+"""
+
 class MovieViewSet(viewsets.ModelViewSet):
   serializer_class = MovieSerializer
   queryset = Movie.objects.all()

@@ -8,11 +8,22 @@ import logging
 logger = logging.getLogger(__name__)
 
 def index(request):
+  """
+  This is the default entry point of the application.
+  It renders a list of movies for the user to view.
+  """
+
   movies = Movie.objects.all()
   days = get_showing_days_times()
   return render(request, "movie_list.html", {"movies": movies, "days": days})
 
 def get_showing_days_times():
+  """
+  This function creates a list of days and times for movies to
+  be viewed in the near future. It does not include times that
+  are already in the past.
+  """
+
   today = timezone.localtime()
   days = []
   for i in range(3):
@@ -42,6 +53,13 @@ def get_showing_days_times():
   return days
 
 def book(request, movie_id, date, time):
+  """
+  This function allows a user to book a showing. If the function is called
+  from the index, the rendered page will ask the user to select a seat. If
+  the function is called by the submission of a form, a booking will be
+  created, presuming no errors are encountered.
+  """
+
   # Find the movie first
   movie = Movie.objects.filter(id = movie_id).first()
   if movie is None:
@@ -89,6 +107,10 @@ def book(request, movie_id, date, time):
     })
 
 def history(request):
+  """
+  This function renders a historical view of bookings as related to the user.
+  """
+
   bookings = Booking.objects.all()
 
   history = []
